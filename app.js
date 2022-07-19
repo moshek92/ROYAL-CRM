@@ -13,12 +13,15 @@ var customersRouter = require('./routes/customers');
 var productsRouter = require('./routes/products');
 var ordersRouter = require('./routes/orders');
 var countriesRouter = require('./routes/countries');
+var coursesRouter = require('./routes/courses');
 
 var app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(express.static(path.join(__dirname, 'exports')));
@@ -30,6 +33,7 @@ app.use('/customers', auth, customersRouter);
 app.use('/products', auth, productsRouter);
 app.use('/orders', auth, ordersRouter);
 app.use('/countries', auth, countriesRouter);
+app.use('/courses', auth, coursesRouter);
 
 // catch 404 err forward error handler
 app.use(function (req, res, next) {

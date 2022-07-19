@@ -2,12 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AddCustomer, Country, Customer, FilePath, Product } from '../shared/types';
+
+import { AddCustomer, Country, Customer, FilePath, Product ,Course} from '../shared/types';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService {
+    exportCourses() {
+      throw new Error('Method not implemented.');
+    }
+    getCoursesList() {
+      throw new Error('Method not implemented.');
+    }
 
     constructor(private http: HttpClient) { }
 
@@ -47,4 +54,12 @@ export class ApiService {
     exportProducts(): Observable<FilePath> {
         return this.http.get<FilePath>(`${environment.serverUrl}/products/export`);
     }
+
+    /* getCourseList(): Observable<Array<Course>> {
+        return this.http.get<Array<Course>>(`${environment.serverUrl}///Courses`);
+    }
+
+   exportCourse(): Observable<FilePath> {
+       return this.http.get<FilePath>(`${environment.serverUrl}/courses/export`);
+    } */
 }

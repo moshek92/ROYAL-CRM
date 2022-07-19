@@ -8,6 +8,9 @@ import { Theme, themeValues } from './shared/types';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+    title(title: any) {
+      throw new Error('Method not implemented.');
+    }
 
     themes: Array<Theme> = [{
         title: 'Light',

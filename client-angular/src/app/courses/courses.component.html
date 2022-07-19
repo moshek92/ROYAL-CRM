@@ -1,0 +1,46 @@
+<app-page-title [totalItems]="CoursesTotal()" [title]="'Courses'"></app-page-title>
+
+
+<div>
+    <app-export (buttonClicked)="exportCoursesData()"></app-export>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Courses
+                <!-- <button (click)="sortCustomers('name')" class="btn btn-default">
+                    <i [ngClass]="displaySort('name')"></i>
+                </button> -->
+            </th>
+            <th>
+                Price
+                <!-- <button (click)="sortCustomers('email')" class="btn btn-default">
+                    <i [ngClass]="displaySort('email')"></i>
+                </button> -->
+            </th>
+            <th>
+                declaration
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of Courses">
+            <td class="d-flex flex-row">
+                <div class="me-3">
+                    <img [src]="imagePath(course.image)" [alt]="course.description"
+                        width="50" height="50" />
+                </div>
+                <div>
+                    <div class="fw-bold">{{ course.name }}</div>
+                    <span class="fw-light">{{ course.description }}</span>
+                </div>
+            </td>
+            <td>{{courses.price}}</td>
+            <td>
+                <!-- todo: actions -->
+            </td>
+        </tr>
+    </tbody>
+</table>

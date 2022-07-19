@@ -6,15 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { CoursesModule } from './courses/courses.module';
 import { CustomersModule } from './customers/customers.module';
 import { HomeModule } from './home/home.module';
 import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
     declarations: [
         AppComponent,
+        
     ],
     imports: [
         BrowserModule,
@@ -27,6 +30,8 @@ import { SharedModule } from './shared/shared.module';
         HomeModule,
         OrdersModule,
         ProductsModule,
+        OrdersModule,
+        CoursesModule
     ],
     providers: [],
     bootstrap: [AppComponent]

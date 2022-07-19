@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UnsubscriptionError } from 'rxjs';
 
 @Component({
     selector: 'app-notification',
@@ -10,6 +11,10 @@ export class NotificationComponent implements OnInit {
     @Input() headerLabel?: string;
     @Input() buttonLabel = 'Close';
     @Input() showNotification = false;
+
+
+
+
 
     @Output() buttonClicked = new EventEmitter<boolean>();
 

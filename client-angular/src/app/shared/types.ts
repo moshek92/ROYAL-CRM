@@ -46,3 +46,10 @@ export interface Product {
     price: number;
     image: string | null;
 }
+export interface Course {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    image: string | null;
+}
