@@ -9,11 +9,10 @@
     <div class="d-flex mb-4">
         <div class="me-auto p-2">
             <div class="input-group">
-                <input (keydown)="findCustomer($event)" [(ngModel)]="searchFieldValue"
-                    type="text" placeholder="Search by name, email, country"
-                    class="form-control">
-                <button (click)="clearSearch()" class="btn btn-outline-secondary" type="button"
-                    id="button-addon2"><i class="bi-x-lg"></i></button>
+                <input (keydown)="findCustomer($event)" [(ngModel)]="searchFieldValue" type="text"
+                    placeholder="Search by name, email, country" class="form-control">
+                <button (click)="clearSearch()" class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                        class="bi-x-lg"></i></button>
             </div>
         </div>
         <div class="p-2">
@@ -48,8 +47,7 @@
                         {{country.name}}</option>
                 </select>
             </div>
-            <button [disabled]="!customerForm.valid" type="submit"
-                class="btn btn-primary">Add</button>
+            <button [disabled]="!customerForm.valid" type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
 
