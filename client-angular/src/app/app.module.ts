@@ -31,7 +31,7 @@ import { SharedModule } from './shared/shared.module';
         OrdersModule,
         ProductsModule,
         OrdersModule,
-        CoursesModule
+        CoursesModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

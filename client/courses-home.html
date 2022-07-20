@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+
+<body>
+    <h3>Get all courses</h3>
+    <form method="get" action="/courses">
+        <select name="column">
+            <option value="name">Sort by course name</option>
+            <option value="price">Sort by course price</option>
+        </select>
+      <!--   <select name="sort">
+            <option value="ASC">Sort A-Z</option>
+            <option value="DESC">Sort Z-A</option>
+        </select> -->
+        <button type="submit">Get Courses</button>
+    </form>
+
+
+    <h3>Export Courses</h3>
+    <form method="get" action="/courses/export">
+        <button type="submit">Export Courses</button>
+    </form>
+
+
+    <h3>Add Courses</h3>
+    <form method="post" action="/courses">
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" name="description">
+        </div>
+        <div>
+            <label>Price:</label>
+            <input type="number" name="price" min="1">
+        </div>
+        <!-- todo: add image -->
+
+        <button type="submit">Add course</button>
+    </form>
+</body>
+
+</html>

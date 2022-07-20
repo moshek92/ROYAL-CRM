@@ -10,15 +10,13 @@
         <tr>
             <th>
                 Courses
-                <!-- <button (click)="sortCustomers('name')" class="btn btn-default">
+                <!-- <button (click)="sortCourse('name')" class="btn btn-default">
                     <i [ngClass]="displaySort('name')"></i>
                 </button> -->
             </th>
             <th>
                 Price
-                <!-- <button (click)="sortCustomers('email')" class="btn btn-default">
-                    <i [ngClass]="displaySort('email')"></i>
-                </button> -->
+
             </th>
             <th>
                 declaration
@@ -26,11 +24,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of Courses">
+       <!--  <tr *ngFor="let course of Courses" *ngFor="let course of Courses">
             <td class="d-flex flex-row">
                 <div class="me-3">
-                    <img [src]="imagePath(course.image)" [alt]="course.description"
-                        width="50" height="50" />
+                    <img [src]="imagePath(course.image)" [alt]="course.description" width="50" height="50" />
                 </div>
                 <div>
                     <div class="fw-bold">{{ course.name }}</div>
@@ -39,8 +36,8 @@
             </td>
             <td>{{courses.price}}</td>
             <td>
-                <!-- todo: actions -->
+
             </td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>

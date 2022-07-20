@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { AddCustomer, Country, Customer, FilePath, Product ,Course} from '../shared/types';
+import { AddCustomer, Country, Customer, FilePath, Product ,course} from '../shared/types';
 
 @Injectable({
     providedIn: 'root'
@@ -55,11 +55,11 @@ export class ApiService {
         return this.http.get<FilePath>(`${environment.serverUrl}/products/export`);
     }
 
-    /* getCourseList(): Observable<Array<Course>> {
-        return this.http.get<Array<Course>>(`${environment.serverUrl}///Courses`);
+    getCourseList(): Observable<Array<course>> {
+        return this.http.get<Array<course>>(`${environment.serverUrl}/Courses`);
     }
 
    exportCourse(): Observable<FilePath> {
        return this.http.get<FilePath>(`${environment.serverUrl}/courses/export`);
-    } */
+    }
 }

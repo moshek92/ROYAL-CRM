@@ -46,10 +46,9 @@ export interface Product {
     price: number;
     image: string | null;
 }
-export interface Course {
+export interface course {
     id: number;
     name: string;
     description: string;
     price: number;
-    image: string | null;
 }

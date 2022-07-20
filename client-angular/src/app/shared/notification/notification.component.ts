@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UnsubscriptionError } from 'rxjs';
+/* import { UnsubscriptionError } from 'rxjs'; */
 
 @Component({
     selector: 'app-notification',
