@@ -35,7 +35,7 @@ export class CoursesComponent implements OnInit {
     }
 
     exportCoursesData() {
-      this.apiService.exportCourses();/* .subscribe({
+      this.apiService.exportCourse();/* .subscribe({
         next: (data: FilePath) => {
             window.open(`${environment.serverUrl}/${data.name}`);
         },

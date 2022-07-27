@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/core/api.service';
+import { RegisterUser } from 'src/app/shared/types';
 
 @Component({
     selector: 'app-signup',
@@ -9,12 +11,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit, AfterViewInit {
 
     @ViewChild('first') firstField!: ElementRef;
+    registerSuccess = false;
 
     signupForm = new FormGroup({
-        firstName: new FormControl('', {
+        first_name: new FormControl('', {
             validators: Validators.required
         }),
-        lastName: new FormControl('', {
+        last_name: new FormControl('', {
             validators: Validators.required
         }),
         email: new FormControl('', {
@@ -28,7 +31,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
         }),
     });
 
-    constructor() { }
+    constructor(private apiService: ApiService) { }
 
     ngOnInit(): void { }
 
@@ -53,13 +56,31 @@ export class SignupComponent implements OnInit, AfterViewInit {
         return true;
     }
 
-    onSubmit() {
-        console.log(this.signupForm.value);
-        console.log(this.validateData());
 
+    onSubmit() {
         if (!this.validateData()) {
             return;
         }
+
+        const value: RegisterUser = this.signupForm.value;
+
+        const details = {
+            first_name: value.first_name,
+            last_name: value.last_name,
+            email: value.email,
+            password: value.password,
+        };
+
+        this.apiService.register(details).subscribe({
+            next: (data) => {
+                this.registerSuccess = true;
+            },
+            error: (err) => {
+                this.registerSuccess = false;
+                console.log(err);
+            }
+        })
+
     }
 
 }

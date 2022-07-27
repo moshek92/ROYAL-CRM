@@ -7,17 +7,23 @@ import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { CoursesComponent } from './courses/courses.component';
+import { AuthService } from './core/auth.service';
 
 const routes: Routes = [
-    { path: 'home-component', component: HomeComponent },
-    { path: 'customers-component', component: CustomersComponent },
-    { path: 'products-component', component: ProductsComponent },
-    { path: 'orders-component', component: OrdersComponent },
+    {
+        path: '',
+        canActivateChild: [AuthService],
+        children: [
+            { path: 'home-component', component: HomeComponent },
+            { path: 'customers-component', component: CustomersComponent },
+            { path: 'products-component', component: ProductsComponent },
+            { path: 'orders-component', component: OrdersComponent },
+            { path: 'courses-component', component: CoursesComponent },
+        ]
+    },
     { path: 'signup-component', component: SignupComponent },
-    { path: 'login-component', component: LoginComponent },
-    { path: 'courses-component', component: CoursesComponent },
-];
-
+    { path: 'login-component', component: LoginComponent },];
+ 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]

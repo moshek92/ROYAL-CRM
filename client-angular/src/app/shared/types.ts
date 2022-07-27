@@ -46,9 +46,29 @@ export interface Product {
     price: number;
     image: string | null;
 }
+
+export interface Login {
+    email?: string | null;
+    password?: string | null;
+}
+
 export interface course {
     id: number;
     name: string;
-    description: string;
+    description?: string | null;
     price: number;
+}
+export interface User {
+    token?: string;
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+}
+
+export interface RegisterUser {
+    first_name?: string | null;
+    last_name?: string | null;
+    email?: string | null;
+    password?: string | null;
 }

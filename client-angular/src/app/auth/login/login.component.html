@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSumbit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="" class="form-label">Email</label>
         <input #emailField formControlName="email" type="email" class="form-control">
@@ -11,6 +11,6 @@
 </form>
 
 <div>
-    <a routerLink="/signup-component" routerLinkActive="active" ariaCurrentWhenActive="page"
-        class="">Create New Account</a>
+    <a routerLink="/signup-component" routerLinkActive="active" ariaCurrentWhenActive="page" class="">Create New
+        Account</a>
 </div>
