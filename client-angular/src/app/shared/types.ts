@@ -52,12 +52,12 @@ export interface Login {
     password?: string | null;
 }
 
-export interface course {
+/* export interface course {
     id: number;
     name: string;
     description?: string | null;
     price: number;
-}
+} */
 export interface User {
     token?: string;
     id: number;
@@ -71,4 +71,32 @@ export interface RegisterUser {
     last_name?: string | null;
     email?: string | null;
     password?: string | null;
+}
+
+
+
+export interface Course {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+   
+}
+
+export interface addCourse {
+    name: string;
+    price: number;
+    description: string;
+}
+
+
+export interface FilePath {
+    name: string;
+}
+
+export type sortCourses = 'name' | 'price' | 'description';
+
+export interface CourseSort {
+    column: sortCourses;
+    dirAsc: boolean;
 }

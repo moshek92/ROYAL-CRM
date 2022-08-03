@@ -2,15 +2,48 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AddCustomer, Country, Customer, FilePath, Login, Product, RegisterUser, User } from '../shared/types';
+import { addCourse, AddCustomer, Country, Course, Customer, FilePath,Login, Product, RegisterUser, User } from '../shared/types';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService {
-    exportCourse() {
-      throw new Error('Method not implemented.');
+
+    getSortedCourses(column: string, direction: string): Observable<Array<Course>> {
+       
+        return this.GET<Array<Course>>(`courses?column=${column}&sort=${direction}`);
     }
+
+
+    findCourse(searchTerm: string): Observable<Array<Course>> {
+       
+        return this.GET<Array<Course>>(`courses/find?search=${searchTerm}`);
+    }
+ 
+  
+    addCourse(course: addCourse): Observable<Course> {
+        return this.http.post<Course>(
+            `${environment.serverUrl}/courses`,
+           course,
+            { headers: { 'Content-Type': 'application/json' } }
+        )
+
+       //return this.POST<Course>(`courses`, course);
+   }
+
+  
+    getCoursesList(): Observable<Array<Course>> {
+        
+        return this.GET<Array<Course>>(`courses`);
+    }
+
+
+    exportCourse(): Observable<FilePath> {
+        
+        return this.GET<FilePath>(`courses/export`);
+    }
+ 
+  
 
     private token = '';
 
